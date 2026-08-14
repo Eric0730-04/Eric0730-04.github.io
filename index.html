@@ -1,0 +1,235 @@
+<!-- Generated with Claude -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Analytics Portfolio</title>
+
+    <style>
+      /* ============================================================
+       BASIC STYLES — students can tweak colors/fonts here
+       ============================================================ */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #222;
+        background: #f7f7f7;
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      /* ---------- HEADER (photo + name + subheading) ---------- */
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      /* Empty space for photo — replace with your own <img> if you like */
+      .photo {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: #ddd;
+        border: 2px dashed #aaa;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 13px;
+      }
+
+      header h1 {
+        font-size: 28px;
+        margin-bottom: 6px;
+      } /* NAME */
+      header p {
+        font-size: 16px;
+        color: #555;
+      } /* EXPERIENCES */
+
+      /* ---------- TABS ---------- */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+
+      .tab-button {
+        padding: 10px 22px;
+        border: 1px solid #ccc;
+        background: #fff;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 4px;
+      }
+
+      .tab-button.active {
+        background: #2c3e50;
+        color: #fff;
+        border-color: #2c3e50;
+      }
+
+      /* ---------- TAB CONTENT ---------- */
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+
+      .panel {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        padding: 24px;
+      }
+
+      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid #eee;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      /* Empty space for project photo */
+      .card-photo {
+        height: 120px;
+        background: #ddd;
+        border-bottom: 1px dashed #aaa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 12px;
+      }
+
+      .card-text {
+        padding: 14px;
+      }
+      .card-text h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .card-text p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* ---------- MOBILE: stack cards vertically ---------- */
+      @media (max-width: 640px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- ============================================================
+         HEADER: photo, name, experiences
+         ============================================================ -->
+      <header>
+        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
+        <div class="photo">Photo</div>
+
+        <h1>Your Name</h1>
+        <p>Business Analyst · SQL · Python · Tableau</p>
+      </header>
+
+      <!-- ============================================================
+         TABS
+         ============================================================ -->
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('about')">
+          About Me
+        </button>
+        <button class="tab-button" onclick="showTab('projects')">
+          Projects
+        </button>
+      </div>
+
+      <!-- ---------- TAB 1: ABOUT ME ---------- -->
+      <div id="about" class="tab-content active">
+        <div class="panel">
+          <p>
+            Write a short introduction about yourself here — your background,
+            skills, and what kind of business analytics role you're looking for.
+          </p>
+        </div>
+      </div>
+
+      <!-- ---------- TAB 2: PROJECTS ---------- -->
+      <div id="projects" class="tab-content">
+        <div class="cards">
+          <!-- CARD 1 -->
+          <div class="card">
+            <div class="card-photo">Project Image</div>
+            <div class="card-text">
+              <h3>Project Title</h3>
+              <p>Short description of what you did and the tools you used.</p>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="card">
+            <div class="card-photo">Project Image</div>
+            <div class="card-text">
+              <h3>Project Title</h3>
+              <p>Short description of what you did and the tools you used.</p>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="card">
+            <div class="card-photo">Project Image</div>
+            <div class="card-text">
+              <h3>Project Title</h3>
+              <p>Short description of what you did and the tools you used.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+       SIMPLE TAB SWITCHING SCRIPT
+       ============================================================ -->
+    <script>
+      function showTab(id) {
+        // hide all tab contents
+        document.querySelectorAll(".tab-content").forEach(function (el) {
+          el.classList.remove("active");
+        });
+        // remove active state from all buttons
+        document.querySelectorAll(".tab-button").forEach(function (btn) {
+          btn.classList.remove("active");
+        });
+        // show the selected tab + highlight the clicked button
+        document.getElementById(id).classList.add("active");
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
