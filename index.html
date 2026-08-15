@@ -1,235 +1,114 @@
-<!-- Generated with Claude -->
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Analytics Portfolio</title>
-
-    <style>
-      /* ============================================================
-       BASIC STYLES — students can tweak colors/fonts here
-       ============================================================ */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
-        line-height: 1.5;
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 40px 20px;
-      }
-
-      /* ---------- HEADER (photo + name + subheading) ---------- */
-      header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      /* Empty space for photo — replace with your own <img> if you like */
-      .photo {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
-      }
-
-      header h1 {
-        font-size: 28px;
-        margin-bottom: 6px;
-      } /* NAME */
-      header p {
-        font-size: 16px;
-        color: #555;
-      } /* EXPERIENCES */
-
-      /* ---------- TABS ---------- */
-      .tabs {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 24px;
-      }
-
-      .tab-button {
-        padding: 10px 22px;
-        border: 1px solid #ccc;
-        background: #fff;
-        cursor: pointer;
-        font-size: 15px;
-        border-radius: 4px;
-      }
-
-      .tab-button.active {
-        background: #2c3e50;
-        color: #fff;
-        border-color: #2c3e50;
-      }
-
-      /* ---------- TAB CONTENT ---------- */
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-      }
-
-      .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
-      }
-
-      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-
-      .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
-        overflow: hidden;
-        background: #fff;
-      }
-
-      /* Empty space for project photo */
-      .card-photo {
-        height: 120px;
-        background: #ddd;
-        border-bottom: 1px dashed #aaa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 12px;
-      }
-
-      .card-text {
-        padding: 14px;
-      }
-      .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
-      }
-      .card-text p {
-        font-size: 14px;
-        color: #555;
-      }
-
-      /* ---------- MOBILE: stack cards vertically ---------- */
-      @media (max-width: 640px) {
-        .cards {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <!-- ============================================================
-         HEADER: photo, name, experiences
-         ============================================================ -->
-      <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
-        <div class="photo">Photo</div>
-
-        <h1>Your Name</h1>
-        <p>Business Analyst · SQL · Python · Tableau</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chang Sun — data analyst, venture capital scout, and long-term value investor." />
+  <title>Chang Sun | Data Analytics &amp; Investment</title>
+  <style>
+    :root { --ink:#182321; --muted:#5e6d69; --accent:#176b58; --dark:#0c4f40; --cream:#f5f2e9; --paper:#fffdf8; --line:#dce3df; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.65; }
+    a { color:inherit; }
+    .page { width:min(1080px,calc(100% - 40px)); margin:auto; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:24px 0; }
+    .brand { font-weight:800; letter-spacing:-.03em; text-decoration:none; }
+    .nav-links { display:flex; gap:24px; }
+    .nav-links a { color:var(--muted); font-size:14px; font-weight:650; text-decoration:none; }
+    .nav-links a:hover { color:var(--accent); }
+    .hero { display:grid; grid-template-columns:1.35fr .65fr; gap:64px; align-items:center; min-height:610px; padding:64px 0 100px; }
+    .eyebrow { margin:0 0 18px; color:var(--accent); font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:0 0 24px; font:500 clamp(48px,8vw,88px)/.98 Georgia,serif; letter-spacing:-.055em; }
+    .hero-copy { max-width:680px; margin:0 0 34px; color:var(--muted); font-size:clamp(18px,2vw,21px); }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border:1px solid var(--accent); border-radius:999px; color:var(--accent); font-size:14px; font-weight:750; text-decoration:none; transition:160ms ease; }
+    .button.primary { color:white; background:var(--accent); }
+    .button:hover { transform:translateY(-2px); box-shadow:0 8px 24px #176b5822; }
+    .portrait { display:grid; width:min(100%,300px); aspect-ratio:1; place-items:center; justify-self:end; border-radius:42% 58% 55% 45% / 48% 42% 58% 52%; color:white; background:var(--accent); box-shadow:28px 28px 0 #d9dfcf; font:92px Georgia,serif; }
+    section { padding:92px 0; border-top:1px solid var(--line); }
+    .section-heading { display:grid; grid-template-columns:.38fr 1fr; gap:40px; margin-bottom:48px; }
+    h2 { margin:0; font:500 clamp(34px,5vw,52px)/1.08 Georgia,serif; letter-spacing:-.04em; }
+    .section-heading p:not(.eyebrow) { max-width:700px; margin:8px 0 0; color:var(--muted); }
+    .skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .skill-card { min-height:200px; padding:28px; border:1px solid var(--line); border-radius:18px; background:var(--paper); }
+    .skill-number { color:var(--accent); font-size:13px; font-weight:700; }
+    .skill-card h3 { margin:42px 0 10px; font-size:19px; }
+    .skill-card p { margin:0; color:var(--muted); font-size:14px; }
+    .timeline { display:grid; gap:14px; }
+    .timeline-item { display:grid; grid-template-columns:180px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid var(--line); }
+    .timeline-item:first-child { border-top:1px solid var(--line); }
+    .date { margin:0; color:var(--accent); font-size:14px; font-weight:750; }
+    .timeline-item h3 { margin:0 0 4px; font-size:20px; }
+    .timeline-item p:not(.date) { margin:0; color:var(--muted); }
+    .credentials { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .credential { padding:28px; border-radius:18px; color:white; background:var(--dark); }
+    .credential p { margin:6px 0 0; color:#c9ded8; }
+    footer { display:flex; align-items:end; justify-content:space-between; gap:32px; padding:70px 0 44px; }
+    footer h2 { max-width:570px; }
+    .contact-links { display:flex; gap:18px; padding-bottom:8px; }
+    .contact-links a { color:var(--accent); font-weight:750; }
+    @media (max-width:760px) {
+      .nav-links a:not(:last-child) { display:none; }
+      .hero { grid-template-columns:1fr; gap:50px; padding-top:48px; }
+      .portrait { width:210px; justify-self:start; font-size:66px; }
+      .section-heading,.skill-grid,.credentials { grid-template-columns:1fr; }
+      .section-heading { gap:10px; }
+      .timeline-item { grid-template-columns:1fr; gap:8px; }
+      footer { align-items:start; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top">CS.</a>
+      <div class="nav-links"><a href="#expertise">Expertise</a><a href="#background">Background</a><a href="#contact">Contact</a></div>
+    </nav>
+    <main id="top">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Data · Ventures · Long-term value</p>
+          <h1>Hi, I’m Chang Sun.</h1>
+          <p class="hero-copy">I am a data analyst, venture capital scout, and individual investor interested in turning evidence into thoughtful, long-term decisions.</p>
+          <div class="actions">
+            <a class="button primary" href="https://www.linkedin.com/in/chang-sun-730841255/" target="_blank" rel="noreferrer">View LinkedIn</a>
+            <a class="button" href="mailto:csun236@outlook.com">Email me</a>
+          </div>
+        </div>
+        <div class="portrait" aria-label="Chang Sun initials">CS</div>
       </header>
-
-      <!-- ============================================================
-         TABS
-         ============================================================ -->
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
-          About Me
-        </button>
-        <button class="tab-button" onclick="showTab('projects')">
-          Projects
-        </button>
-      </div>
-
-      <!-- ---------- TAB 1: ABOUT ME ---------- -->
-      <div id="about" class="tab-content active">
-        <div class="panel">
-          <p>
-            Write a short introduction about yourself here — your background,
-            skills, and what kind of business analytics role you're looking for.
-          </p>
+      <section id="expertise">
+        <div class="section-heading">
+          <p class="eyebrow">What I bring</p>
+          <div><h2>Analysis with an investor’s perspective.</h2><p>My interests sit at the intersection of analytical problem-solving, market understanding, and disciplined investment thinking.</p></div>
         </div>
-      </div>
-
-      <!-- ---------- TAB 2: PROJECTS ---------- -->
-      <div id="projects" class="tab-content">
-        <div class="cards">
-          <!-- CARD 1 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
+        <div class="skill-grid">
+          <article class="skill-card"><span class="skill-number">01</span><h3>Data Analytics</h3><p>Structuring information, identifying patterns, and translating findings into clear decisions.</p></article>
+          <article class="skill-card"><span class="skill-number">02</span><h3>Investment Research</h3><p>Evaluating businesses and opportunities through a long-term, value-oriented lens.</p></article>
+          <article class="skill-card"><span class="skill-number">03</span><h3>Venture Capital</h3><p>Exploring emerging companies, markets, and the fundamentals behind sustainable growth.</p></article>
         </div>
-      </div>
-    </div>
-
-    <!-- ============================================================
-       SIMPLE TAB SWITCHING SCRIPT
-       ============================================================ -->
-    <script>
-      function showTab(id) {
-        // hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(function (el) {
-          el.classList.remove("active");
-        });
-        // remove active state from all buttons
-        document.querySelectorAll(".tab-button").forEach(function (btn) {
-          btn.classList.remove("active");
-        });
-        // show the selected tab + highlight the clicked button
-        document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
-      }
-    </script>
-  </body>
+      </section>
+      <section id="background">
+        <div class="section-heading"><p class="eyebrow">Background</p><h2>Learning across analytics and investing.</h2></div>
+        <div class="timeline">
+          <article class="timeline-item"><p class="date">2026 — Present</p><div><h3>McGill University — Desautels Faculty of Management</h3><p>Graduate studies with a focus on management analytics.</p></div></article>
+          <article class="timeline-item"><p class="date">Current</p><div><h3>Wharton Alumni Angels</h3><p>Venture capital experience supporting the evaluation of early-stage opportunities.</p></div></article>
+          <article class="timeline-item"><p class="date">June 2025</p><div><h3>Dean’s List</h3><p>Academic recognition for strong performance.</p></div></article>
+        </div>
+      </section>
+      <section aria-labelledby="credentials-title">
+        <div class="section-heading"><p class="eyebrow">Credentials</p><h2 id="credentials-title">Continuous learning.</h2></div>
+        <div class="credentials">
+          <article class="credential"><strong>Environmental Social Governance</strong><p>Bloomberg · Issued April 2025</p></article>
+          <article class="credential"><strong>HP Tech</strong><p>Paragon One · Issued March 2025</p></article>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      <h2>Let’s connect and explore what the data can reveal.</h2>
+      <div class="contact-links"><a href="mailto:csun236@outlook.com">Email</a><a href="https://www.linkedin.com/in/chang-sun-730841255/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+    </footer>
+  </div>
+</body>
 </html>
