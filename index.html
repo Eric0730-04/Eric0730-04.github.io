@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chang Sun — data analyst, venture capital scout, and long-term value investor." />
-  <title>Chang Sun | Data Analytics &amp; Investment</title>
+  <meta name="description" content="Eric Sun — analytics graduate student with experience across fintech, venture capital, and investment banking." />
+  <title>Eric Sun | Analytics &amp; Investment</title>
   <style>
     :root { --ink:#182321; --muted:#5e6d69; --accent:#176b58; --dark:#0c4f40; --cream:#f5f2e9; --paper:#fffdf8; --line:#dce3df; }
     * { box-sizing:border-box; }
@@ -25,9 +25,11 @@
     .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border:1px solid var(--accent); border-radius:999px; color:var(--accent); font-size:14px; font-weight:750; text-decoration:none; transition:160ms ease; }
     .button.primary { color:white; background:var(--accent); }
     .button:hover { transform:translateY(-2px); box-shadow:0 8px 24px #176b5822; }
-    .portrait { display:grid; width:min(100%,300px); aspect-ratio:1; place-items:center; justify-self:end; border-radius:42% 58% 55% 45% / 48% 42% 58% 52%; color:white; background:var(--accent); box-shadow:28px 28px 0 #d9dfcf; font:92px Georgia,serif; }
-    section { padding:92px 0; border-top:1px solid var(--line); }
-    .section-heading { display:grid; grid-template-columns:.38fr 1fr; gap:40px; margin-bottom:48px; }
+    .portrait-frame { width:min(100%,320px); aspect-ratio:1; justify-self:end; overflow:hidden; border-radius:50%; background:transparent; }
+    .portrait { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transform:translateY(7%) scale(1.55); transform-origin:50% 43%; }
+    section { padding:68px 0; border-top:1px solid var(--line); }
+    .section-heading { display:grid; grid-template-columns:.38fr 1fr; gap:40px; margin-bottom:38px; }
+    .section-heading > .eyebrow { font-size:17px; }
     h2 { margin:0; font:500 clamp(34px,5vw,52px)/1.08 Georgia,serif; letter-spacing:-.04em; }
     .section-heading p:not(.eyebrow) { max-width:700px; margin:8px 0 0; color:var(--muted); }
     .skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
@@ -35,27 +37,56 @@
     .skill-number { color:var(--accent); font-size:13px; font-weight:700; }
     .skill-card h3 { margin:42px 0 10px; font-size:19px; }
     .skill-card p { margin:0; color:var(--muted); font-size:14px; }
+    .toolkit { display:grid; gap:18px; margin-top:36px; }
+    .tool-group { display:grid; grid-template-columns:190px 1fr; gap:18px; align-items:start; }
+    .tool-group h3 { margin:7px 0 0; color:var(--muted); font-size:13px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+    .tool-list { display:flex; flex-wrap:wrap; gap:10px; }
+    .tool { padding:8px 14px; border:1px solid var(--line); border-radius:999px; color:var(--accent-dark); background:var(--paper); font-size:13px; font-weight:750; }
+    .experience-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; align-items:start; }
+    .experience-column { display:grid; gap:18px; align-content:start; }
+    .experience-card { display:flex; flex-direction:column; padding:30px; border:1px solid var(--line); border-radius:18px; background:var(--paper); }
+    .experience-meta { display:flex; justify-content:space-between; gap:20px; margin-bottom:28px; color:var(--accent); font-size:13px; font-weight:750; }
+    .experience-meta span:last-child { flex:none; text-align:right; white-space:nowrap; }
+    .experience-card h3 { margin:0; font-size:22px; line-height:1.35; }
+    .experience-column > .experience-card:first-child h3 { min-height:2.7em; }
+    .role { margin:3px 0 18px; color:var(--muted); font-weight:650; }
+    .experience-card ul { margin:0; padding-left:19px; color:var(--muted); font-size:14px; }
+    .experience-card li + li { margin-top:8px; }
     .timeline { display:grid; gap:14px; }
-    .timeline-item { display:grid; grid-template-columns:180px 1fr; gap:32px; padding:28px 0; border-bottom:1px solid var(--line); }
+    .timeline-item { display:grid; grid-template-columns:56px 160px 1fr; gap:24px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); }
     .timeline-item:first-child { border-top:1px solid var(--line); }
+    .school-mark { position:relative; display:block; width:56px; aspect-ratio:1; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:white; }
+    .school-logo { position:absolute; top:50%; left:50%; display:block; width:46px; height:46px; object-fit:contain; transform:translate(-50%,-50%); }
+    .school-logo.mcgill { width:88px; height:54px; max-width:none; }
     .date { margin:0; color:var(--accent); font-size:14px; font-weight:750; }
     .timeline-item h3 { margin:0 0 4px; font-size:20px; }
     .timeline-item p:not(.date) { margin:0; color:var(--muted); }
+    #experience { padding-bottom:32px; }
+    #background { padding:22px 0 52px; }
+    .education-heading { margin-bottom:18px; }
+    .education-heading .eyebrow { margin-bottom:0; font-size:17px; }
+    #background .timeline-item { padding:20px 0; }
     .credentials { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
     .credential { padding:28px; border-radius:18px; color:white; background:var(--dark); }
     .credential p { margin:6px 0 0; color:#c9ded8; }
-    footer { display:flex; align-items:end; justify-content:space-between; gap:32px; padding:70px 0 44px; }
-    footer h2 { max-width:570px; }
-    .contact-links { display:flex; gap:18px; padding-bottom:8px; }
-    .contact-links a { color:var(--accent); font-weight:750; }
     @media (max-width:760px) {
       .nav-links a:not(:last-child) { display:none; }
       .hero { grid-template-columns:1fr; gap:50px; padding-top:48px; }
-      .portrait { width:210px; justify-self:start; font-size:66px; }
+      .portrait-frame { width:230px; justify-self:start; }
       .section-heading,.skill-grid,.credentials { grid-template-columns:1fr; }
+      .experience-grid { display:flex; flex-direction:column; }
+      .experience-column { display:contents; }
+      .experience-column > .experience-card:first-child h3 { min-height:0; }
+      .experience-card.didi { order:1; }
+      .experience-card.hp { order:2; }
+      .experience-card.guosen { order:3; }
+      .experience-card.wharton { order:4; }
       .section-heading { gap:10px; }
-      .timeline-item { grid-template-columns:1fr; gap:8px; }
-      footer { align-items:start; flex-direction:column; }
+      .tool-group { grid-template-columns:1fr; gap:8px; }
+      .tool-group h3 { margin-top:0; }
+      .timeline-item { grid-template-columns:52px 1fr; gap:6px 14px; }
+      .school-mark { grid-row:1 / span 2; width:52px; align-self:start; }
+      .timeline-item .date,.timeline-item > div { grid-column:2; }
     }
   </style>
 </head>
@@ -63,38 +94,75 @@
   <div class="page">
     <nav aria-label="Main navigation">
       <a class="brand" href="#top">CS.</a>
-      <div class="nav-links"><a href="#expertise">Expertise</a><a href="#background">Background</a><a href="#contact">Contact</a></div>
+      <div class="nav-links"><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#background">Education</a></div>
     </nav>
     <main id="top">
       <header class="hero">
         <div>
-          <p class="eyebrow">Data · Ventures · Long-term value</p>
-          <h1>Hi, I’m Chang Sun.</h1>
-          <p class="hero-copy">I am a data analyst, venture capital scout, and individual investor interested in turning evidence into thoughtful, long-term decisions.</p>
+          <p class="eyebrow">Analytics · Fintech · Investment</p>
+          <h1>Hi, I’m Eric Sun.</h1>
+          <p class="hero-copy">I turn complex financial and operational data into decisions—combining hands-on analytics with experience in fintech, venture capital, and investment banking.</p>
           <div class="actions">
             <a class="button primary" href="https://www.linkedin.com/in/chang-sun-730841255/" target="_blank" rel="noreferrer">View LinkedIn</a>
             <a class="button" href="mailto:csun236@outlook.com">Email me</a>
           </div>
         </div>
-        <div class="portrait" aria-label="Chang Sun initials">CS</div>
+        <div class="portrait-frame">
+          <img class="portrait" src="assets/Portrait%20of%20Eric%20Sun.jpg" alt="Portrait of Eric Sun" width="6270" height="4180" fetchpriority="high" />
+        </div>
       </header>
       <section id="expertise">
         <div class="section-heading">
           <p class="eyebrow">What I bring</p>
-          <div><h2>Analysis with an investor’s perspective.</h2><p>My interests sit at the intersection of analytical problem-solving, market understanding, and disciplined investment thinking.</p></div>
+          <div><h2>Analysis that drives better decisions.</h2><p>I bring together technical analysis, business judgment, and clear communication to uncover risks, evaluate opportunities, and improve decisions.</p></div>
         </div>
         <div class="skill-grid">
-          <article class="skill-card"><span class="skill-number">01</span><h3>Data Analytics</h3><p>Structuring information, identifying patterns, and translating findings into clear decisions.</p></article>
-          <article class="skill-card"><span class="skill-number">02</span><h3>Investment Research</h3><p>Evaluating businesses and opportunities through a long-term, value-oriented lens.</p></article>
-          <article class="skill-card"><span class="skill-number">03</span><h3>Venture Capital</h3><p>Exploring emerging companies, markets, and the fundamentals behind sustainable growth.</p></article>
+          <article class="skill-card"><span class="skill-number">01</span><h3>Data Analytics</h3><p>Building SQL pipelines, transforming large datasets, and developing dashboards that make performance and risk visible.</p></article>
+          <article class="skill-card"><span class="skill-number">02</span><h3>Financial Analysis</h3><p>Applying valuation multiples, cash-flow forecasting, KPI analysis, and financial statement review to investment decisions.</p></article>
+          <article class="skill-card"><span class="skill-number">03</span><h3>Market Research</h3><p>Mapping sectors, assessing business models, and turning primary and secondary research into actionable recommendations.</p></article>
+        </div>
+        <div class="toolkit" aria-label="Technical and business analytics skills">
+          <div class="tool-group"><h3>Programming &amp; Data</h3><div class="tool-list"><span class="tool">Python</span><span class="tool">SQL</span><span class="tool">R</span><span class="tool">Stata</span><span class="tool">Excel</span><span class="tool">Git/GitHub</span></div></div>
+          <div class="tool-group"><h3>Python Libraries</h3><div class="tool-list"><span class="tool">Pandas</span><span class="tool">NumPy</span><span class="tool">Matplotlib</span><span class="tool">scikit-learn</span></div></div>
+          <div class="tool-group"><h3>BI &amp; Data Platforms</h3><div class="tool-list"><span class="tool">Tableau</span><span class="tool">Power BI</span><span class="tool">Looker</span><span class="tool">Snowflake</span><span class="tool">AWS</span></div></div>
+          <div class="tool-group"><h3>Analytics &amp; Statistics</h3><div class="tool-list"><span class="tool">A/B Testing</span><span class="tool">Regression Analysis</span><span class="tool">Optimization &amp; Decision Modeling</span><span class="tool">Time Series Analysis</span><span class="tool">Machine Learning</span><span class="tool">Data Visualization</span></div></div>
+          <div class="tool-group"><h3>Business Analytics</h3><div class="tool-list"><span class="tool">Go-to-Market Analytics</span><span class="tool">AML Analytics</span><span class="tool">Due Diligence</span><span class="tool">Financial Analysis</span></div></div>
+        </div>
+      </section>
+      <section id="experience">
+        <div class="section-heading"><p class="eyebrow">Experience</p><div><h2>From raw data to business impact.</h2><p>Selected work across compliance analytics, venture investing, and financial due diligence.</p></div></div>
+        <div class="experience-grid">
+          <div class="experience-column">
+          <article class="experience-card didi">
+            <div class="experience-meta"><span>DiDi</span><span>Jun 2025 – Sept 2025</span></div>
+            <h3>IMG Fintech - Compliance Strategy Data Analyst Intern</h3><p class="role">Shanghai, China</p>
+            <ul><li>Queried and analyzed 10M+ weekly transactions from the internal data warehouse using SQL and Excel to conduct anti-money laundering (AML) risk tiering, ensuring detection of suspicious activity and compliance with Brazil’s reporting requirements.</li><li>Built auto-updating compliance dashboards using the internal visualization platform (DataDream) by developing 100+ lines of SQL pipelines, enabling real-time risk monitoring and reducing manual compliance workload by 20%.</li><li>Collaborated with R&amp;D and product teams to design a GPS-based compliance system on the internal strategy platform, enabling auto-decline of sanctioned payments and increasing blocked transaction rate by 2%.</li><li>Delivered SQL training for Mexico compliance team and partnered with R&amp;D team to integrate seven new AML data fields, streamlining review processes and enhancing global audit efficiency and consistency.</li></ul>
+          </article>
+          <article class="experience-card guosen">
+            <div class="experience-meta"><span>Guosen Securities</span><span>Jun 2024 – Aug 2024</span></div>
+            <h3>Investment Banking Intern</h3><p class="role">Chengdu, China</p>
+            <ul><li>Performed cash flow forecasts, shareholder equity mapping, and valuation multiples for pre-IPO projects using Excel and Wind, supporting due diligence on 3 target firms in the semi-conductor and general aviation sectors.</li><li>Reviewed five years of financial statements and filings per company, incorporating on-site management interviews to uncover potential risks such as undisclosed related-party transactions and abnormal cash flows.</li><li>Collaborated with legal and accounting teams to integrate regulatory insights into financial reporting, strengthening IPO documentation and readiness for China Securities Regulatory Commission review.</li></ul>
+          </article>
+          </div>
+          <div class="experience-column">
+          <article class="experience-card hp">
+            <div class="experience-meta"><span>HP Tech Venture</span><span>Jan 2025 – Mar 2025</span></div>
+            <h3>Business Analytics Extern</h3><p class="role">Hybrid</p>
+            <ul><li>Standardized and transformed 15,000+ rows of startup financial and operational data from internal trackers, surveys, and filings using SQL, Excel, and OpenRefine for KPI analysis (e.g., annual recurring revenue, payback period).</li><li>Analyzed 30+ early-stage startups by evaluating business models, growth traction, and risk profiles to assess investment potential; mapped emerging sectors in AI-powered media accessibility, streaming infrastructure, and creator economy tools to inform deal sourcing and prioritize pipeline opportunities.</li><li>Delivered pitchdeck with charts and visual analyses to the senior leaders in the investment team, providing insights to guide early-stage portfolio allocation.</li></ul>
+          </article>
+          <article class="experience-card wharton">
+            <div class="experience-meta"><span>Wharton Alumni Angels</span><span>August 2025</span></div>
+            <h3>Investment Analyst Intern</h3><p class="role">Hybrid</p>
+            <ul><li>Assisted in reviewing pitch decks and financials of early-stage startups across industries such as fintech, healthtech, AI, and consumer goods.</li><li>Joined regular startup pitch sessions and ask strategic questions to assess business model.</li><li>Helped track portfolio progress through periodic founder check-ins and other ad-hocs.</li></ul>
+          </article>
+          </div>
         </div>
       </section>
       <section id="background">
-        <div class="section-heading"><p class="eyebrow">Background</p><h2>Learning across analytics and investing.</h2></div>
+        <div class="education-heading"><p class="eyebrow">Education</p></div>
         <div class="timeline">
-          <article class="timeline-item"><p class="date">2026 — Present</p><div><h3>McGill University — Desautels Faculty of Management</h3><p>Graduate studies with a focus on management analytics.</p></div></article>
-          <article class="timeline-item"><p class="date">Current</p><div><h3>Wharton Alumni Angels</h3><p>Venture capital experience supporting the evaluation of early-stage opportunities.</p></div></article>
-          <article class="timeline-item"><p class="date">June 2025</p><div><h3>Dean’s List</h3><p>Academic recognition for strong performance.</p></div></article>
+          <article class="timeline-item"><span class="school-mark"><img class="school-logo mcgill" src="assets/mcgill-crest.png" alt="McGill University crest" width="564" height="337" loading="lazy" /></span><p class="date">2026 — 2027</p><div><h3>McGill University — Desautels Faculty of Management</h3><p>Master of Management in Analytics · Expected October 2027</p></div></article>
+          <article class="timeline-item"><span class="school-mark"><img class="school-logo" src="assets/uw-madison-crest.svg" alt="University of Wisconsin–Madison crest" width="46" height="46" loading="lazy" /></span><p class="date">2022 — 2026</p><div><h3>University of Wisconsin–Madison</h3><p>B.A. in Economics and Data Science · Cumulative GPA: 3.78/4.00 · Dean’s List (Fall 2024 and Spring 2025)</p></div></article>
         </div>
       </section>
       <section aria-labelledby="credentials-title">
@@ -105,10 +173,6 @@
         </div>
       </section>
     </main>
-    <footer id="contact">
-      <h2>Let’s connect and explore what the data can reveal.</h2>
-      <div class="contact-links"><a href="mailto:csun236@outlook.com">Email</a><a href="https://www.linkedin.com/in/chang-sun-730841255/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
-    </footer>
   </div>
 </body>
 </html>
