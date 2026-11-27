@@ -10,6 +10,7 @@ The site is buildless HTML, CSS, and JavaScript, deployed by GitHub Pages from t
 
 - Current academic consulting: customer lifetime value modelling with Propel Holdings.
 - Featured work: SecondLook, 8-K Revision Agent, and Return Detective.
+- [Financial Due Diligence Work Samples](https://eric0730-04.github.io/#financial-due-diligence): UNH equity research and a redacted Sereniby diligence report.
 - Academic projects, professional experience, skills, education, and personal interests.
 - The SecondLook video is streamed from the project's existing GitHub Release asset. A download link remains available.
 
