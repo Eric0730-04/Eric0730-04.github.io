@@ -8,7 +8,7 @@ The site is buildless HTML, CSS, and JavaScript, deployed by GitHub Pages from t
 
 ## Content
 
-- Current academic consulting: customer lifetime value modelling with Propel Holdings.
+- [Academic Analytics Consulting Projects with Propel Holdings](https://eric0730-04.github.io/#propel) — Risk Division Data Engineer / Modeler – Customer Lifetime Value (CLV) · Sep 2026 – Present.
 - Featured work: SecondLook, 8-K Revision Agent, and Return Detective.
 - [Financial Due Diligence Work Samples](https://eric0730-04.github.io/#financial-due-diligence): UNH equity research and a redacted Sereniby diligence report.
 - Academic projects, professional experience, skills, education, and personal interests.

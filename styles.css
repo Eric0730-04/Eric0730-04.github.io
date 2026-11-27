@@ -22,3 +22,7 @@
 .report-actions .button,.report-actions .text-link{font-size:14px}
 .report-note{font-size:14px;color:var(--muted);line-height:1.65;margin-top:18px;margin-bottom:0}
 @media(max-width:760px){.report-grid{grid-template-columns:1fr;gap:20px}.report-preview{height:300px;padding:20px}.report-copy{padding:25px}.report-copy h3{font-size:26px}}
+
+/* Resume wording for the Propel consulting entry */
+#propel .propel-resume-details{margin:0;padding-left:1.2em;color:var(--muted);font-size:15px;line-height:1.8}
+#propel .propel-resume-details li+li{margin-top:14px}
